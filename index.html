@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <img
+        src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
+        alt="Logo"
+      />
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="registration.html">Registration</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Section Title</h2>
+        <p>Section content</p>
+
+        <div class="box">
+          <h3>Box Title 1</h3>
+          <img src="image1.jpg" alt="Box Image 1" />
+          <p>Box content 1</p>
+          <a href="#" class="button">Read More</a>
+        </div>
+
+        <div class="box">
+          <h3>Box Title 2</h3>
+          <video src="video.mp4" poster="video-poster.jpg" controls></video>
+          <p>Box content 2</p>
+          <a href="#" class="button">Watch Video</a>
+        </div>
+
+        <div class="box">
+          <h3>Box Title 3</h3>
+          <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+          </ul>
+          <p>Box content 3</p>
+          <a href="#" class="button">Learn More</a>
+        </div>
+
+        <div class="box">
+          <h3>Box Title 4</h3>
+          <blockquote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            venenatis felis ut cursus imperdiet.
+          </blockquote>
+          <p>Box content 4</p>
+          <a href="#" class="button">Get Inspired</a>
+        </div>
+      </section>
+
+      <aside>
+        <div class="sidebar-header">
+          <h2>Filters</h2>
+          <button class="sidebar-toggle">
+            <i class="fas fa-chevron-left"></i>
+            <span>Hide Filters</span>
+          </button>
+        </div>
+        <div class="sidebar-body">
+          <h3>Sort By</h3>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fas fa-sort-amount-up"></i>
+                <span>Price High to Low</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-sort-amount-down"></i>
+                <span>Price Low to High</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-clock"></i>
+                <span>Newest Arrivals</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-star"></i>
+                <span>Top Rated</span>
+              </a>
+            </li>
+          </ul>
+          <h3>Brand</h3>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fas fa-check-square"></i>
+                <span>Adidas</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-square"></i>
+                <span>Nike</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-square"></i>
+                <span>Puma</span>
+              </a>
+            </li>
+          </ul>
+          <h3>Price Range</h3>
+          <div class="price-range">
+            <input type="range" min="0" max="100" value="50" class="slider" />
+            <div class="slider-value">
+              <span>0</span>
+              <span>100</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <table>
+      <thead>
+        <tr>
+          <th id="id">ID</th>
+          <th id="first-name">First Name</th>
+          <th id="last-name">Last Name</th>
+          <th id="email">Email</th>
+          <th id="phone">Phone</th>
+          <th id="city">City</th>
+          <th id="country">Country</th>
+          <th id="company">Company</th>
+          <th id="position">Position</th>
+          <th id="actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="id">1</td>
+          <td id="first-name">John</td>
+          <td id="last-name">Doe</td>
+          <td id="email">johndoe@example.com</td>
+          <td id="phone">(123) 456-7890</td>
+          <td id="city">New York</td>
+          <td id="country">USA</td>
+          <td id="company">ABC Corp</td>
+          <td id="position">Manager</td>
+          <td id="actions">
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="id">2</td>
+          <td id="first-name">Jane</td>
+          <td id="last-name">Smith</td>
+          <td id="email">janesmith@example.com</td>
+          <td id="phone">(123) 456-7890</td>
+          <td id="city">Los Angeles</td>
+          <td id="country">USA</td>
+          <td id="company">XYZ Inc</td>
+          <td id="position">Developer</td>
+          <td id="actions">
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="id">3</td>
+          <td id="first-name">Mike</td>
+          <td id="last-name">Brown</td>
+          <td id="email">mikebrown@example.com</td>
+          <td id="phone">(123) 456-7890</td>
+          <td id="city">Chicago</td>
+          <td id="country">USA</td>
+          <td id="company">123 Co</td>
+          <td id="position">Analyst</td>
+          <td id="actions">
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>Heading 2</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed
+            diam vitae ipsum euismod laoreet. Donec euismod faucibus mi, vel
+            rhoncus nulla semper non.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <h3>Subheading 3</h3>
+          <p>
+            Nulla ac tellus vel mi pharetra pulvinar. Aliquam ullamcorper mi sed
+            quam dapibus, nec eleifend risus tristique. Suspendisse in maximus
+            velit.
+          </p>
+        </div>
+        <div class="col-6">
+          <h3>Subheading 3</h3>
+          <p>
+            Sed malesuada nulla eget turpis volutpat, a auctor erat auctor.
+            Aliquam ut nisl eu quam dictum scelerisque. Donec ullamcorper, justo
+            at imperdiet malesuada, nisi ipsum commodo quam, id congue felis
+            nulla in felis.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <h4>Subheading 4</h4>
+          <p>
+            Aliquam at nunc non leo aliquam porttitor nec ut mauris. Aenean ac
+            lorem a enim suscipit efficitur eu a urna. Pellentesque nec eros
+            ultricies, laoreet mi et, molestie sapien.
+          </p>
+        </div>
+        <div class="col-4">
+          <h4>Subheading 4</h4>
+          <p>
+            Cras tincidunt nunc et augue ullamcorper tristique. Nunc nec laoreet
+            purus. Fusce volutpat lectus in odio sollicitudin, nec dignissim
+            orci scelerisque.
+          </p>
+        </div>
+        <div class="col-4">
+          <h4>Subheading 4</h4>
+          <p>
+            Proin bibendum, quam at ultrices tempor, turpis ipsum pulvinar
+            velit, eu imperdiet justo nisi eget purus. Vestibulum ante ipsum
+            primis in faucibus orci luctus et ultrices posuere cubilia curae;
+            Donec a rhoncus elit.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2023 CSS Selector Identification Training</p>
+    </footer>
+  </body>
+</html>
