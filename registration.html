@@ -103,6 +103,30 @@
           Reading</label
         >
       </fieldset>
+      <!-- Slider -->
+      <div style="margin-bottom: 20px">
+        <label for="experience">Experience Level:</label>
+        <input
+          type="range"
+          id="experience"
+          name="experience"
+          min="1"
+          max="10"
+          value="5"
+          step="1"
+        />
+        <span id="experience-value">5</span>
+      </div>
+
+      <script>
+        const experienceSlider = document.getElementById("experience");
+        const experienceValue = document.getElementById("experience-value");
+        experienceValue.textContent = experienceSlider.value;
+        experienceSlider.addEventListener("input", function () {
+          experienceValue.textContent = this.value;
+        });
+        experienceValue.textContent = experienceSlider.value;
+      </script>
 
       <label for="newsletter"
         ><input type="checkbox" id="newsletter" name="newsletter" value="yes" />
