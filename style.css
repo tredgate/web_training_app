@@ -364,3 +364,67 @@ a i {
   flex: 1;
   text-align: right;
 }
+.actions-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.action-box {
+  border: 1px dashed #336;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.draggable {
+  width: 100px;
+  height: 100px;
+  background-color: #336;
+  color: white;
+  line-height: 100px;
+  text-align: center;
+  margin: auto;
+  cursor: move;
+}
+
+.dropzone {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed #666;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 120px;
+  color: #666;
+}
+
+.action-active {
+  background-color: #336;
+  color: white;
+}
+
+#hover-box:hover {
+  background-color: #336;
+  color: white;
+}
+
+button {
+  background-color: #336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hold-button {
+  font-size: large;
+}
+
+.hold-active {
+  background-color: #e83b3b;
+}
