@@ -75,6 +75,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="date"],
+input[type="tel"],
 select,
 textarea {
   width: 100%;
@@ -201,4 +202,8 @@ header img {
 
 .success-box p {
   margin: 10px 0;
+}
+
+fieldset.radio-buttons {
+  margin-bottom: 10px;
 }
