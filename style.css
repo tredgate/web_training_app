@@ -442,7 +442,7 @@ button {
   font-weight: bold;
 }
 
-div.new-tab-button {
+div.div-button {
   background-color: #336;
   width: 30%;
   padding: 10px 20px;
@@ -453,11 +453,11 @@ div.new-tab-button {
   margin: 0 auto;
 }
 
-div.new-tab-button a {
+div.div-button a {
   color: #fff;
   text-decoration: none;
 }
 
-div.new-tab-button:hover {
+div.div-button:hover {
   background-color: #6da7d6;
 }
