@@ -195,15 +195,10 @@
 
         // Success box functionality
         const successBox = document.getElementById("successBox");
-        const closeSuccessBox = document.getElementById("closeSuccessBox");
 
         myForm.addEventListener("submit", function (event) {
           event.preventDefault(); // Prevent default form submission
           successBox.style.display = "block"; // Show success box
-        });
-
-        closeSuccessBox.addEventListener("click", function () {
-          successBox.style.display = "none"; // Hide success box
         });
       </script>
     </form>
