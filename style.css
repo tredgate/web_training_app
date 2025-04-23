@@ -428,3 +428,13 @@ button {
 .hold-active {
   background-color: #e83b3b;
 }
+
+.drag-drop {
+  height: 350px;
+}
+
+.info-message {
+  color: #e83b3b;
+  font-size: 16px;
+  font-weight: bold;
+}

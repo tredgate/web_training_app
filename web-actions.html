@@ -45,7 +45,7 @@
           <p>Hover over this box to see the effect.</p>
         </div>
 
-        <div class="action-box">
+        <div class="action-box drag-drop" data-testid="drag-drop-box">
           <h2>Drag and Drop</h2>
           <div
             id="drag1"
@@ -63,6 +63,14 @@
           >
             Drop here
           </div>
+          <p
+            class="info-message"
+            id="dropped-message"
+            style="display: none; margin-top: 10px"
+            data-testid="dropped-message"
+          >
+            Box was dropped into the dropzone!
+          </p>
         </div>
 
         <div class="action-box">
@@ -106,6 +114,7 @@
         const dragged = document.getElementById(data);
         ev.target.innerHTML = "";
         ev.target.appendChild(dragged);
+        document.getElementById("dropped-message").style.display = "block"; // Show the dropped message
       }
     </script>
   </body>
