@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Practice Form</title>
+  <link rel="stylesheet" href="registration.css" />
+</head>
+
+<body>
+  <header>
+    <img
+      src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
+      alt="Logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html" data-testid="menu-home">Home</a></li>
+        <li><a href="#" data-testid="menu-about">About</a></li>
+        <li><a href="contact.html" data-testid="menu-contact">Contact</a></li>
+        <li><a href="registration.html" data-testid="menu-registration">Registration</a></li>
+        <li><a href="web-actions.html" data-testid="menu-web-actions">Web Actions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Contact Us! Practise Form</h1>
+  <div class="success-box" id="successBox" data-testid="success-box" style="display: none;">
+    <p>Form submitted successfully! <strong>No data was sent.</strong></p>
+  </div>
+
+  <form id="practiceForm" data-testid="practice-form">
+    <label for="full-name">Full Name:</label>
+    <input type="text" id="full-name" name="fullName" required data-testid="input-name" />
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required data-testid="input-email" />
+
+    <label for="contact-date">Date of Contact:</label>
+    <input type="date" id="contact-date" name="contactDate" required data-testid="input-contact-date" />
+
+    <label for="role">Role:</label>
+    <select id="role" name="role" required data-testid="select-role">
+      <option value="">-- Select Role --</option>
+      <option value="student">Student</option>
+      <option value="instructor">Instructor</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" rows="4" data-testid="textarea-comments"></textarea>
+
+    <label>
+      <input type="checkbox" id="newsletter" name="newsletter" value="yes" data-testid="checkbox-newsletter" />
+      Subscribe to newsletter
+    </label>
+
+    <button type="submit" data-testid="button-submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('practiceForm');
+    const successBox = document.getElementById('successBox');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      successBox.style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>

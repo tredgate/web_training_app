@@ -1,121 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Actions</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <img
-        src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
-        alt="Logo"
-      />
-      <nav>
-        <ul>
-          <li><a href="index.html" data-testid="menu-home">Home</a></li>
-          <li><a href="#" data-testid="menu-about">About</a></li>
-          <li><a href="#" data-testid="menu-contact">Contact</a></li>
-          <li>
-            <a href="registration.html" data-testid="menu-registration"
-              >Registration</a
-            >
-          </li>
-          <li><a href="#" data-testid="menu-web-actions">Web Actions</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <main class="actions-container">
-      <section>
-        <h2>Web Actions Training</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Actions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-        <div
-          class="action-box"
-          ondblclick="this.classList.toggle('action-active')"
-          data-testid="double-click-box"
-        >
-          <h2>Double Click Here</h2>
-          <p>Double click here to test.</p>
+<body>
+  <header>
+    <img
+      src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
+      alt="Logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html" data-testid="menu-home">Home</a></li>
+        <li><a href="#" data-testid="menu-about">About</a></li>
+        <li><a href="contact.html" data-testid="menu-contact">Contact</a></li>
+        <li>
+          <a href="registration.html" data-testid="menu-registration">Registration</a>
+        </li>
+        <li><a href="#" data-testid="menu-web-actions">Web Actions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="actions-container">''
+    <section>
+      <h2>Web Actions Training</h2>
+
+      <div class="action-box" ondblclick="this.classList.toggle('action-active')" data-testid="double-click-box">
+        <h2>Double Click Here</h2>
+        <p>Double click here to test.</p>
+      </div>
+
+      <div class="action-box" id="hover-box" data-testid="hover-box"
+        onmouseover="this.querySelector('[data-testid=\'hover-message\']').style.display='block';"
+        onmouseout="this.querySelector('[data-testid=\'hover-message\']').style.display='none';">
+        <h2>Mouse Hover Here</h2>
+        <p>Hover over this box to see the effect.</p>
+        <p data-testid="hover-message" style="display: none;">
+          This is a hover message that appears when you hover over the box.
+        </p>
+      </div>
+
+      <div class="action-box drag-drop" data-testid="drag-drop-box">
+        <h2>Drag and Drop</h2>
+        <div id="drag1" class="draggable" draggable="true" ondragstart="drag(event)">
+          Drag me
         </div>
-
-        <div class="action-box" id="hover-box" data-testid="hover-box">
-          <h2>Mouse Hover Here</h2>
-          <p>Hover over this box to see the effect.</p>
+        <div id="drop1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+          Drop here
         </div>
+        <p class="info-message" id="dropped-message" style="display: none; margin-top: 10px"
+          data-testid="dropped-message">
+          Box was dropped into the dropzone!
+        </p>
+      </div>
 
-        <div class="action-box drag-drop" data-testid="drag-drop-box">
-          <h2>Drag and Drop</h2>
-          <div
-            id="drag1"
-            class="draggable"
-            draggable="true"
-            ondragstart="drag(event)"
-          >
-            Drag me
-          </div>
-          <div
-            id="drop1"
-            class="dropzone"
-            ondrop="drop(event)"
-            ondragover="allowDrop(event)"
-          >
-            Drop here
-          </div>
-          <p
-            class="info-message"
-            id="dropped-message"
-            style="display: none; margin-top: 10px"
-            data-testid="dropped-message"
-          >
-            Box was dropped into the dropzone!
-          </p>
-        </div>
+      <div class="action-box">
+        <h2>Click and Hold</h2>
+        <button class="hold-button" onmousedown="this.innerText='Holding...'; this.classList.add('hold-active')"
+          onmouseup="this.innerText='Click and Hold'; this.classList.remove('hold-active')">
+          Click and Hold
+        </button>
+      </div>
 
-        <div class="action-box">
-          <h2>Click and Hold</h2>
-          <button
-            class="hold-button"
-            onmousedown="this.innerText='Holding...'; this.classList.add('hold-active')"
-            onmouseup="this.innerText='Click and Hold'; this.classList.remove('hold-active')"
-          >
-            Click and Hold
-          </button>
-        </div>
+      <div class="action-box" data-testid="iframe-box">
+        <h2>Iframe - Registration Form</h2>
+        <iframe src="registration.html" title="Test Automation Iframe" width="100%" height="400"
+          data-testid="test-automation-iframe" style="border: 1px solid #ccc"></iframe>
+        <p>This is iframe with registration form implementation.</p>
+      </div>
+    </section>
+  </main>
 
-        <div class="action-box" data-testid="iframe-box">
-          <h2>Iframe - Registration Form</h2>
-          <iframe
-            src="registration.html"
-            title="Test Automation Iframe"
-            width="100%"
-            height="400"
-            data-testid="test-automation-iframe"
-            style="border: 1px solid #ccc"
-          ></iframe>
-          <p>This is iframe with registration form implementation.</p>
-        </div>
-      </section>
-    </main>
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
 
-    <script>
-      function allowDrop(ev) {
-        ev.preventDefault();
-      }
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
 
-      function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-      }
+    function drop(ev) {
+      ev.preventDefault();
+      const data = ev.dataTransfer.getData("text");
+      const dragged = document.getElementById(data);
+      ev.target.innerHTML = "";
+      ev.target.appendChild(dragged);
+      document.getElementById("dropped-message").style.display = "block"; // Show the dropped message
+    }
+  </script>
+</body>
 
-      function drop(ev) {
-        ev.preventDefault();
-        const data = ev.dataTransfer.getData("text");
-        const dragged = document.getElementById(data);
-        ev.target.innerHTML = "";
-        ev.target.appendChild(dragged);
-        document.getElementById("dropped-message").style.display = "block"; // Show the dropped message
-      }
-    </script>
-  </body>
 </html>
