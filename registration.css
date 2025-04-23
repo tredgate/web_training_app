@@ -74,6 +74,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="date"],
 select,
 textarea {
   width: 100%;
@@ -188,4 +189,16 @@ header {
 
 header img {
   height: 50px;
+}
+
+.success-box {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.success-box p {
+  margin: 10px 0;
 }

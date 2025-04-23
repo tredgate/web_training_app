@@ -30,6 +30,14 @@
       </nav>
     </header>
     <form class="registration-form" id="myForm">
+      <h2>Registration Form</h2>
+      <!-- Success box - displayed only after successful submit -->
+      <div class="success-box" id="successBox" style="display: none">
+        <p>
+          Registration successful! <b>This is a test form, no data was sent.</b>
+        </p>
+      </div>
+
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required />
 
@@ -47,8 +55,15 @@
         required
       />
 
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" min="18" max="99" required />
+      <label for="date-of-birth">Date of Birth:</label>
+      <input
+        type="date"
+        id="date-of-birth"
+        name="date-of-birth"
+        required
+        min="1900-01-01"
+        max=""
+      />
 
       <label for="gender">Gender:</label>
       <select id="gender" name="gender" required>
@@ -119,6 +134,11 @@
       </div>
 
       <script>
+        // Set max date for date-of-birth input to today
+        document.getElementById("date-of-birth").max = new Date()
+          .toISOString()
+          .split("T")[0];
+
         const experienceSlider = document.getElementById("experience");
         const experienceValue = document.getElementById("experience-value");
         experienceValue.textContent = experienceSlider.value;
@@ -126,6 +146,19 @@
           experienceValue.textContent = this.value;
         });
         experienceValue.textContent = experienceSlider.value;
+
+        // Success box functionality
+        const successBox = document.getElementById("successBox");
+        const closeSuccessBox = document.getElementById("closeSuccessBox");
+
+        myForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+          successBox.style.display = "block"; // Show success box
+        });
+
+        closeSuccessBox.addEventListener("click", function () {
+          successBox.style.display = "none"; // Hide success box
+        });
       </script>
 
       <label for="newsletter"
