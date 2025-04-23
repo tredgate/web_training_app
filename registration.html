@@ -160,6 +160,24 @@
         />
         <span id="experience-value">5</span>
       </div>
+      <!-- File upload input-->
+      <div style="margin-bottom: 20px">
+        <label for="file-upload">Upload File:</label>
+        <p class="hint">File types allowed: .jpg, .jpeg, .png, .pdf .txt</p>
+        <input
+          type="file"
+          id="file-upload"
+          name="file-upload"
+          accept=".jpg, .jpeg, .png, .pdf, .txt"
+        />
+      </div>
+
+      <label for="newsletter"
+        ><input type="checkbox" id="newsletter" name="newsletter" value="yes" />
+        Sign me up for the newsletter</label
+      >
+
+      <button type="submit">Submit</button>
 
       <script>
         // Set max date for date-of-birth input to today
@@ -188,13 +206,6 @@
           successBox.style.display = "none"; // Hide success box
         });
       </script>
-
-      <label for="newsletter"
-        ><input type="checkbox" id="newsletter" name="newsletter" value="yes" />
-        Sign me up for the newsletter</label
-      >
-
-      <button type="submit">Submit</button>
     </form>
   </body>
 </html>
