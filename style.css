@@ -97,7 +97,8 @@ ul {
 li {
   margin-bottom: 10px;
   padding-left: 20px;
-  display: flex; /* add this line */
+  display: flex;
+  /* add this line */
 }
 
 /* Table styles */
@@ -173,6 +174,7 @@ tr:nth-child(odd) {
     background-color: #fff;
   }
 }
+
 /* Responsive styles */
 @media screen and (max-width: 767px) {
   main {
@@ -364,6 +366,7 @@ a i {
   flex: 1;
   text-align: right;
 }
+
 .actions-container {
   max-width: 800px;
   margin: 30px auto;
@@ -437,4 +440,24 @@ button {
   color: #e83b3b;
   font-size: 16px;
   font-weight: bold;
+}
+
+div.new-tab-button {
+  background-color: #336;
+  width: 30%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+}
+
+div.new-tab-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+div.new-tab-button:hover {
+  background-color: #6da7d6;
 }
