@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIA Testing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
+        alt="Logo"
+      />
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="#">Web Actions</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="actions-container">
+      <section>
+        <h2>ARIA Accessibility Examples</h2>
+
+        <div
+          class="action-box"
+          role="form"
+          aria-labelledby="correct-form-label"
+        >
+          <h3 id="correct-form-label">Correct ARIA Form</h3>
+          <label for="name" id="name-label">Name:</label>
+          <input
+            id="name"
+            type="text"
+            aria-labelledby="name-label"
+          /><br /><br />
+
+          <label for="email" id="email-label">Email:</label>
+          <input
+            id="email"
+            type="email"
+            aria-labelledby="email-label"
+          /><br /><br />
+
+          <button aria-label="Submit contact form">Submit</button>
+        </div>
+
+        <div
+          class="action-box"
+          role="dialog"
+          aria-labelledby="dialog-title"
+          aria-describedby="dialog-desc"
+        >
+          <h3 id="dialog-title">Info Dialog</h3>
+          <p id="dialog-desc">
+            This dialog provides additional information for accessibility
+            testing.
+          </p>
+          <button aria-label="Close dialog">Close</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Incorrect ARIA Usage</h2>
+
+        <div class="action-box">
+          <h3>Missing Labels</h3>
+          <label>Name:</label>
+          <input type="text" /><br /><br />
+
+          <label>Email:</label>
+          <input type="email" /><br /><br />
+
+          <button>Submit</button>
+        </div>
+
+        <div class="action-box">
+          <h3>Wrong Roles</h3>
+          <div role="button" tabindex="0">Pretend Button</div>
+          <div role="checkbox">Pretend Checkbox</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
