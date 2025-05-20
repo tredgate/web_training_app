@@ -18,8 +18,15 @@ header img {
   height: 50px;
 }
 
-img.icons {
+.icons {
+  display: flex;
+  align-items: center;
+
+}
+
+.icons img {
   height: 75px;
+  padding: 0 25px;
 }
 
 nav ul {
