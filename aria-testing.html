@@ -1,90 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARIA Testing</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <img
-        src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
-        alt="Logo"
-      />
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="registration.html">Registration</a></li>
-          <li><a href="#">Web Actions</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <main class="actions-container">
-      <section>
-        <h2>ARIA Accessibility Examples</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARIA Testing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-        <div
-          class="action-box"
-          role="form"
-          aria-labelledby="correct-form-label"
-        >
-          <h3 id="correct-form-label">Correct ARIA Form</h3>
-          <label for="name" id="name-label">Name:</label>
-          <input
-            id="name"
-            type="text"
-            aria-labelledby="name-label"
-          /><br /><br />
+<body>
+  <header>
+    <img
+      src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
+      alt="Logo" />
+    <nav id="main-nav" role="navigation" aria-label="Main navigation"></nav>
+  </header>
 
-          <label for="email" id="email-label">Email:</label>
-          <input
-            id="email"
-            type="email"
-            aria-labelledby="email-label"
-          /><br /><br />
+  <main class="actions-container" role="main">
+    <section>
+      <h2>ARIA Accessibility Examples</h2>
+      <!-- Good Form -->
+      <form class="action-box" aria-labelledby="correct-form-label">
+        <h3 id="correct-form-label">Correct ARIA Form</h3>
+        <label for="name" id="name-label">Name:</label>
+        <input id="name" type="text" aria-labelledby="name-label" /><br /><br />
+        <label for="email" id="email-label">Email:</label>
+        <input id="email" type="email" aria-labelledby="email-label" /><br /><br />
+        <button aria-label="Submit contact form">Submit</button>
+      </form>
+      <!-- Live Region -->
+      <div aria-live="polite" id="status-message">No new notifications.</div>
+      <!-- Accessible Table -->
+      <table aria-label="Sample Data Table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alice</td>
+            <td>Admin</td>
+          </tr>
+          <tr>
+            <td>Bob</td>
+            <td>User</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- List Example -->
+      <ul aria-label="Task List">
+        <li>Task 1</li>
+        <li>Task 2</li>
+      </ul>
+      <!-- Button with ARIA state -->
+      <button aria-pressed="false" id="toggle-btn">Toggle</button>
+      <!-- Dialog Example -->
+      <div class="action-box" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
+        <h3 id="dialog-title">Info Dialog</h3>
+        <p id="dialog-desc">
+          This dialog provides additional information for accessibility
+          testing.
+        </p>
+        <button aria-label="Close dialog">Close</button>
+      </div>
+    </section>
 
-          <button aria-label="Submit contact form">Submit</button>
-        </div>
+    <section>
+      <h2>Incorrect ARIA Usage</h2>
+      <!-- Missing Labels -->
+      <div class="action-box">
+        <h3>Missing Labels</h3>
+        <label>Name:</label>
+        <input type="text" /><br /><br />
+        <label>Email:</label>
+        <input type="email" /><br /><br />
+        <button>Submit</button>
+      </div>
+      <!-- Wrong Roles -->
+      <div class="action-box">
+        <h3>Wrong Roles</h3>
+        <div role="button" tabindex="0">Pretend Button</div>
+        <div role="checkbox">Pretend Checkbox</div>
+      </div>
+      <!-- Non-semantic Interactive -->
+      <div class="action-box">
+        <h3>Non-semantic Interactive</h3>
+        <div onclick="alert('Clicked!')">Click me (no role, no keyboard support)</div>
+      </div>
+      <!-- Duplicate IDs -->
+      <div class="action-box">
+        <h3>Duplicate IDs</h3>
+        <label for="dup">Field 1</label>
+        <input id="dup" type="text" />
+        <label for="dup">Field 2</label>
+        <input id="dup" type="text" />
+      </div>
+      <!-- Poor Contrast -->
+      <div class="action-box" style="background: #fff; color: #eee;">
+        <h3>Poor Contrast</h3>
+        <p>This text has poor contrast.</p>
+      </div>
+    </section>
+  </main>
+  <footer role="contentinfo">
+    <p>&copy; 2025 Example Company</p>
+  </footer>
+  <script src="nav.js"></script>
+</body>
 
-        <div
-          class="action-box"
-          role="dialog"
-          aria-labelledby="dialog-title"
-          aria-describedby="dialog-desc"
-        >
-          <h3 id="dialog-title">Info Dialog</h3>
-          <p id="dialog-desc">
-            This dialog provides additional information for accessibility
-            testing.
-          </p>
-          <button aria-label="Close dialog">Close</button>
-        </div>
-      </section>
-
-      <section>
-        <h2>Incorrect ARIA Usage</h2>
-
-        <div class="action-box">
-          <h3>Missing Labels</h3>
-          <label>Name:</label>
-          <input type="text" /><br /><br />
-
-          <label>Email:</label>
-          <input type="email" /><br /><br />
-
-          <button>Submit</button>
-        </div>
-
-        <div class="action-box">
-          <h3>Wrong Roles</h3>
-          <div role="button" tabindex="0">Pretend Button</div>
-          <div role="checkbox">Pretend Checkbox</div>
-        </div>
-      </section>
-    </main>
-  </body>
 </html>

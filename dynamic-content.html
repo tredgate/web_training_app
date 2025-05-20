@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARIA Testing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <img
+      src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
+      alt="Logo" />
+    <nav id="main-nav"></nav>
+  </header>
+
+  <main class="actions-container">
+    <section>
+      <h2>Dynamic Content Size</h2>
+      <div class="action-box" data-testid="dynamic-size-box">
+        <h3 id="correct-form-label">Dynamic Size Box 1</h3>
+      </div>
+
+      <div class="action-box" data-testid="dynamic-size-box">
+        <h3 id="dialog-title">Dynamic Size Box 2</h3>
+      </div>
+
+      <script>
+        function generateRandomParagraph(minWords, maxWords) {
+          const words = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"];
+          const numWords = Math.floor(Math.random() * (maxWords - minWords + 1)) + minWords;
+          let paragraph = "";
+          for (let i = 0; i < numWords; i++) {
+            paragraph += words[Math.floor(Math.random() * words.length)] + " ";
+          }
+          return paragraph.trim() + ".";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const boxes = document.querySelectorAll('div[data-testid="dynamic-size-box"]');
+          boxes.forEach(box => {
+            const numParagraphs = Math.floor(Math.random() * 10) + 1; // 1 to 10 paragraphs
+            for (let i = 0; i < numParagraphs; i++) {
+              const p = document.createElement("p");
+              p.textContent = generateRandomParagraph(10, 30);
+              box.appendChild(p);
+            }
+          });
+        });
+      </script>
+      </script>
+      <div class="action-box" data-testid="static-size-box">
+        <h3 id="dialog-title">Static Size Box</h3>
+        <p id="static-text">This text remains the same size.</p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+
+</html>
