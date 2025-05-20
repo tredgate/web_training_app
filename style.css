@@ -18,6 +18,10 @@ header img {
   height: 50px;
 }
 
+img.icons {
+  height: 75px;
+}
+
 nav ul {
   display: flex;
   list-style: none;
