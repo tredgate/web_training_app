@@ -12,7 +12,7 @@
   <header>
     <img
       src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
-      alt="Logo" />
+      alt="Tredgate Logo" class="logo_test_class" />
     <nav id="main-nav"></nav>
   </header>
 
@@ -85,7 +85,7 @@
 
     <aside>
       <div class="sidebar-header">
-        <h2>Filters</h2>
+        <h2 class="filters-title">Filters</h2>
         <button class="sidebar-toggle">
           <i class="fas fa-chevron-left"></i>
           <span>Hide Filters</span>
@@ -97,29 +97,29 @@
           <li>
             <a href="#">
               <i class="fas fa-sort-amount-up"></i>
-              <span>Price High to Low</span>
+              <span data-testid="sort_price_high_to_low">Price High to Low</span>
             </a>
           </li>
           <li>
             <a href="#">
               <i class="fas fa-sort-amount-down"></i>
-              <span>Price Low to High</span>
+              <span data-testid="sort_price_low_to_high">Price Low to High</span>
             </a>
           </li>
           <li>
             <a href="#">
               <i class="fas fa-clock"></i>
-              <span>Newest Arrivals</span>
+              <span data-testid="sort_newest_arrivals">Newest Arrivals</span>
             </a>
           </li>
           <li>
             <a href="#">
               <i class="fas fa-star"></i>
-              <span>Top Rated</span>
+              <span data-testid="sort_top_rated">Top Rated</span>
             </a>
           </li>
         </ul>
-        <h3>Brand</h3>
+        <h3 class="brand-title first test_class third">Brand</h3>
         <ul>
           <li>
             <a href="#">
@@ -154,16 +154,34 @@
   <section>
     <h2>Image Examples</h2>
     <div class="icons">
-      <img src="cypress.png" id="cypress-logo" alt="Cypress Logo" />
+      <img src="cypress.png" id="cypress-logo" alt="Cypress Logo" class="image" data-testid="cypress_logo"
+        aria-label="An example image" role="img" />
       <img src="selenium.png" class="icons" id="selenium-logo" alt="Selenium Logo" />
       <img src="playwright.png" class="icons" id="playwright-logo" alt="Playwright Logo" />
     </div>
   </section>
   <section>
+    <h2>Form Elements Examples</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+      </div>
+    </form>
+  </section>
+  <section>
     <h2>Table Example</h2>
-    <table>
+    <table id="users_table">
       <thead>
-        <tr>
+        <tr id="headers">
           <th id="id">ID</th>
           <th id="first-name">First Name</th>
           <th id="last-name">Last Name</th>
@@ -177,8 +195,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td id="id">1</td>
+        <tr id="row-1">
+          <td id="id">11</td>
           <td id="first-name">John</td>
           <td id="last-name">Doe</td>
           <td id="email">johndoe@example.com</td>
@@ -192,13 +210,13 @@
             <button>Delete</button>
           </td>
         </tr>
-        <tr>
-          <td id="id">2</td>
+        <tr id="row-2">
+          <td id="id">12</td>
           <td id="first-name">Jane</td>
           <td id="last-name">Smith</td>
           <td id="email">janesmith@example.com</td>
           <td id="phone">(123) 456-7890</td>
-          <td id="city">Los Angeles</td>
+          <td id="city">New Orleans</td>
           <td id="country">USA</td>
           <td id="company">XYZ Inc</td>
           <td id="position">Developer</td>
@@ -207,8 +225,8 @@
             <button>Delete</button>
           </td>
         </tr>
-        <tr>
-          <td id="id">3</td>
+        <tr id="row-3">
+          <td id="id">13</td>
           <td id="first-name">Mike</td>
           <td id="last-name">Brown</td>
           <td id="email">mikebrown@example.com</td>
@@ -285,6 +303,72 @@
         </div>
       </div>
     </div>
+  </section>
+  <section>
+    <h2>Table Example 2</h2>
+    <table id="users_table_2">
+      <thead>
+        <tr id="headers">
+          <th id="id">ID</th>
+          <th id="first-name">First Name</th>
+          <th id="last-name">Last Name</th>
+          <th id="email">Email</th>
+          <th id="phone">Phone</th>
+          <th id="city">City</th>
+          <th id="country">Country</th>
+          <th id="company">Company</th>
+          <th id="position">Position</th>
+          <th id="actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="row-1">
+          <td id="id">1</td>
+          <td id="first-name">John</td>
+          <td id="last-name">Doe</td>
+          <td id="email">johndoe@example.com</td>
+          <td id="phone">(123) 456-7890</td>
+          <td id="city">New York</td>
+          <td id="country">USA</td>
+          <td id="company">ABC Corp</td>
+          <td id="position">Manager</td>
+          <td id="actions">
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+        <tr id="row-2">
+          <td id="id">2</td>
+          <td id="first-name">Jane</td>
+          <td id="last-name">Smith</td>
+          <td id="email">janesmith@example.com</td>
+          <td id="phone">(123) 456-7890</td>
+          <td id="city">Los Angeles</td>
+          <td id="country">USA</td>
+          <td id="company">XYZ Inc</td>
+          <td id="position">Developer</td>
+          <td id="actions">
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+        <tr id="row-3">
+          <td id="id">3</td>
+          <td id="first-name">Mike</td>
+          <td id="last-name">Brown</td>
+          <td id="email">mikebrown@example.com</td>
+          <td id="phone">(123) 456-7890</td>
+          <td id="city">Chicago</td>
+          <td id="country">USA</td>
+          <td id="company">123 Co</td>
+          <td id="position">Analyst</td>
+          <td id="actions">
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </section>
   <footer>
     <p>&copy; 2025 Treducation gate s.r.o</p>
