@@ -1,113 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIA Testing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARIA Testing</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <header>
+      <img
+        src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
+        alt="Logo"
+      />
+      <nav id="main-nav" role="navigation" aria-label="Main navigation"></nav>
+    </header>
 
-<body>
-  <header>
-    <img
-      src="https://i0.wp.com/tredgate.cz/wp-content/uploads/2022/02/tredgate-zakladni-slogan.png?fit=1367%2C330&ssl=1"
-      alt="Logo" />
-    <nav id="main-nav" role="navigation" aria-label="Main navigation"></nav>
-  </header>
+    <main class="actions-container" role="main">
+      <section>
+        <h2>ARIA Accessibility Examples</h2>
+        <!-- Good Form -->
+        <form class="action-box" aria-labelledby="correct-form-label">
+          <h3 id="correct-form-label">Correct ARIA Form</h3>
+          <label for="name" id="name-label">Name:</label>
+          <input
+            id="name"
+            type="text"
+            aria-labelledby="name-label"
+          /><br /><br />
+          <label for="email" id="email-label">Email:</label>
+          <input
+            id="email"
+            type="email"
+            aria-labelledby="email-label"
+          /><br /><br />
+          <button aria-label="Submit contact form">Submit</button>
+        </form>
+        <!-- Live Region -->
+        <div aria-live="polite" id="status-message">No new notifications.</div>
+        <!-- Accessible Table -->
+        <table aria-label="Sample Data Table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>Admin</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>User</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- List Example -->
+        <ul aria-label="Task List">
+          <li>Task 1</li>
+          <li>Task 2</li>
+        </ul>
+        <!-- Button with ARIA state -->
+        <button aria-pressed="false" id="toggle-btn">Toggle</button>
+        <!-- Dialog Example -->
+        <div
+          class="action-box"
+          role="dialog"
+          aria-labelledby="dialog-title"
+          aria-describedby="dialog-desc"
+        >
+          <h3 id="dialog-title">Info Dialog</h3>
+          <p id="dialog-desc">
+            This dialog provides additional information for accessibility
+            testing.
+          </p>
+          <button aria-label="Close dialog">Close</button>
+        </div>
+      </section>
 
-  <main class="actions-container" role="main">
-    <section>
-      <h2>ARIA Accessibility Examples</h2>
-      <!-- Good Form -->
-      <form class="action-box" aria-labelledby="correct-form-label">
-        <h3 id="correct-form-label">Correct ARIA Form</h3>
-        <label for="name" id="name-label">Name:</label>
-        <input id="name" type="text" aria-labelledby="name-label" /><br /><br />
-        <label for="email" id="email-label">Email:</label>
-        <input id="email" type="email" aria-labelledby="email-label" /><br /><br />
-        <button aria-label="Submit contact form">Submit</button>
-      </form>
-      <!-- Live Region -->
-      <div aria-live="polite" id="status-message">No new notifications.</div>
-      <!-- Accessible Table -->
-      <table aria-label="Sample Data Table">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Alice</td>
-            <td>Admin</td>
-          </tr>
-          <tr>
-            <td>Bob</td>
-            <td>User</td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- List Example -->
-      <ul aria-label="Task List">
-        <li>Task 1</li>
-        <li>Task 2</li>
-      </ul>
-      <!-- Button with ARIA state -->
-      <button aria-pressed="false" id="toggle-btn">Toggle</button>
-      <!-- Dialog Example -->
-      <div class="action-box" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
-        <h3 id="dialog-title">Info Dialog</h3>
-        <p id="dialog-desc">
-          This dialog provides additional information for accessibility
-          testing.
-        </p>
-        <button aria-label="Close dialog">Close</button>
-      </div>
-    </section>
+      <section>
+        <h2>Incorrect ARIA Usage</h2>
+        <!-- Missing Labels -->
+        <div class="action-box">
+          <h3>Missing Labels</h3>
+          <label>Name:</label>
+          <input type="text" /><br /><br />
+          <label>Email:</label>
+          <input type="email" /><br /><br />
+          <button>Submit</button>
+        </div>
+        <!-- Wrong Roles -->
+        <div class="action-box">
+          <h3>Wrong Roles</h3>
+          <div role="button" tabindex="0">Pretend Button</div>
+          <div role="checkbox">Pretend Checkbox</div>
+        </div>
+        <!-- Non-semantic Interactive -->
+        <div class="action-box">
+          <h3>Non-semantic Interactive</h3>
+          <div onclick="alert('Clicked!')">
+            Click me (no role, no keyboard support)
+          </div>
+        </div>
+        <!-- Duplicate IDs -->
+        <div class="action-box">
+          <h3>Duplicate IDs</h3>
+          <label for="dup">Field 1</label>
+          <input id="dup" type="text" />
+          <label for="dup">Field 2</label>
+          <input id="dup" type="text" />
+        </div>
+        <!-- Poor Contrast -->
+        <div class="action-box" style="background: #fff; color: #eee">
+          <h3>Poor Contrast</h3>
+          <p>This text has poor contrast.</p>
+        </div>
+      </section>
+      <section>
+        <!-- Images labels -->
 
-    <section>
-      <h2>Incorrect ARIA Usage</h2>
-      <!-- Missing Labels -->
-      <div class="action-box">
-        <h3>Missing Labels</h3>
-        <label>Name:</label>
-        <input type="text" /><br /><br />
-        <label>Email:</label>
-        <input type="email" /><br /><br />
-        <button>Submit</button>
-      </div>
-      <!-- Wrong Roles -->
-      <div class="action-box">
-        <h3>Wrong Roles</h3>
-        <div role="button" tabindex="0">Pretend Button</div>
-        <div role="checkbox">Pretend Checkbox</div>
-      </div>
-      <!-- Non-semantic Interactive -->
-      <div class="action-box">
-        <h3>Non-semantic Interactive</h3>
-        <div onclick="alert('Clicked!')">Click me (no role, no keyboard support)</div>
-      </div>
-      <!-- Duplicate IDs -->
-      <div class="action-box">
-        <h3>Duplicate IDs</h3>
-        <label for="dup">Field 1</label>
-        <input id="dup" type="text" />
-        <label for="dup">Field 2</label>
-        <input id="dup" type="text" />
-      </div>
-      <!-- Poor Contrast -->
-      <div class="action-box" style="background: #fff; color: #eee;">
-        <h3>Poor Contrast</h3>
-        <p>This text has poor contrast.</p>
-      </div>
-    </section>
-  </main>
-  <footer role="contentinfo">
-    <p>&copy; 2025 Example Company</p>
-  </footer>
-  <script src="nav.js"></script>
-</body>
-
+        <h2>Image labels and alternative texts</h2>
+        <div class="action-box">
+          <!-- Information paragraph -->
+          <p>
+            Images should have descriptive alt text to convey their meaning. If
+            image have already text label, avoid redundant labeling.
+          </p>
+          <h3>Alt examples</h3>
+          <div class="box-images">
+            <div class="box-image-container">
+              <p>Good image:</p>
+              <img
+                src="img/woman-accessibility.png"
+                class="box-image"
+                alt="Woman sitting at front of computer"
+              />
+            </div>
+            <div class="box-image-container">
+              <p>Bad image:</p>
+              <img src="img/woman-accessibility.png" class="box-image" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="action-box">
+          <h3>Decorative Images</h3>
+          <p>
+            Decorative images should have empty alt attributes (alt="") so they
+            are ignored by assistive technologies. If you fill the alt attribute
+            for example for icons which have labels, screen reader will read the
+            information twice.
+          </p>
+          <!-- icons with labels-->
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              justify-content: center;
+            "
+          >
+            <div style="width: 40%; margin-right: 20px">
+              <p class="bold">Correct use of empty alt attribute</p>
+              <p class="icon-label">
+                <img src="img/home-icon.png" class="icon" alt="" /> Home
+              </p>
+              <p class="icon-label">
+                <img src="img/search-icon.png" class="icon" alt="" /> Search
+              </p>
+            </div>
+            <div style="width: 40%; margin-left: 20px">
+              <p class="bold">
+                Incorrect: alt attribute is filled for decorative icons
+              </p>
+              <p class="icon-label">
+                <img src="img/home-icon.png" class="icon" alt="Home" /> Home
+              </p>
+              <p class="icon-label">
+                <img src="img/search-icon.png" class="icon" alt="Search" />
+                Search
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer role="contentinfo">
+      <p>&copy; 2025 Example Company</p>
+    </footer>
+    <script src="nav.js"></script>
+  </body>
 </html>
